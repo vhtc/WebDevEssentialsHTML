@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div>
+        <!--GET - URL será parecido com isso: https://example.com/form.php?name?John&email?john%40example.com.
+        POST - ENVIA NO CORPO DO HTTP - mais seguro - porem não pode ser marcado, compartilhado ou em CACHE-->
+        <form action="javascript:void(0)" onsubmit="inserirDados()" method="post"> <!--get ou post-->
+            <input type="text" name="inputText" id="" required> <!--Campo required = obrigatório-->
+            <input type="email" name="inputEmail" id="">
+            <input type="url" name="inputurl" id="">
+            <input type="number" name="number" id="">
+            <input type="password" name="password" id="">
+            <input type="checkbox" name="checkbox" id="">
+            <input type="radio" name="radio" id="">
+            <input type="submit" value="Clique aqui">
+            <input type="reset">
+        </form>
+    </div>
+    <div>
+        <form action="javascript:void(0)" method="post" onsubmit="inserirDados()">
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" name="emailUsuario" id="email" required>
+            </p>
+            <p>
+                <label for="username">Nome Usuário</label>
+                <input type="text" name="nomeUsuario" id="username" required>
+            </p>
+            <p>
+                <input type="submit" value="Enviar Dados">
+            </p>
+        </form>
+    </div>
+</body>
+
+</html>
