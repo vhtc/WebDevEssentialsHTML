@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+.inputEmail{
+    width: 383px;
+}
+</style>
+
+<body onload="executar()">
+    <header>
+        <section>
+            <div>
+                <form action="javascript:void(0)" method="post">
+                    <fieldset>
+                        <legend>Tela Login</legend>
+                        <p>
+                            <label for="username">Username:</label>
+                            <input type="text" name="username" id="username" placeholder="login" required>
+                        </p>
+                        <p>
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" id="password" placeholder="senha" required>
+                            <input for="password" type="checkbox" name="checkbox" id="checkbox" autocomplete="off">
+                            <label color for="checkbox">View password!</label>
+                        </p>
+                        <p>
+                            <button type="submit">Login</button>
+                            <button type="reset">Sair</button>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+        <br>
+        <section>
+            <div>
+                <form action="">
+                    <fieldset>
+                        <legend>Cadastro Contato</legend>
+                        <p>
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" id="name">
+                            <label for="lastname">Lastname:</label>
+                            <input type="text" name="lastname" id="lastname">
+                        </p>
+                        <p>
+                            <label for="emailUsuario">Email:</label>
+                            <input type="email" class="inputEmail" id="emailUsuario" >
+                        </p>
+                        <p>
+                            <legend>Mensagem:</legend>
+                            <textarea name="mensagem" id="mensagem" cols="62" rows="10"></textarea>
+                        </p>
+                        <p>
+                            <button type="submit">Enviar</button>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </header>
+</body>
+<script>
+    function executar() {
+        selecao = document.getElementById('checkbox')
+        password = document.getElementById('password')
+
+        selecao.addEventListener('change', () => {
+            if (selecao.checked) {
+                password.type = 'text'
+            } else {
+                password.type = 'password'
+            }
+        })
+    }
+</script>
+
+</html>
