@@ -9,25 +9,93 @@
 
 <body>
     <header>
-        <section>
+        <section id="calculadoraIMC">
             <div>
-                <form action="javascript:void(0)">
+                <form action="javascript:void(0)" method="post" onsubmit="calcular()">
                     <fieldset>
-                        <legend>Claculadora imc</legend>
+                        <legend>Claculadora IMC</legend>
                         <p>
-                            <label for="kg">Peso Corporal:</label>
-                            <input type="number">
-                            <label for="">Alura: (cm)</label>
-                            <input type="number">
+                            <label for="peso">Peso Corporal: (Kg)</label>
+                            <input type="number" name="peso" id="peso" required step="0.01">
+                            <label for="">Altura: (m)</label>
+                            <input type="number" name="altura" id="altura" required step="0.01">
                         </p>
                         <p>
-                            <button type="submit"></button>
+                            <button type="submit">Calcular</button>
+                            <button type="reset" onclick="limpar()">Limpar</button>
                         </p>
                     </fieldset>
                 </form>
             </div>
         </section>
+        <section id="resultado">
+            <fieldset>
+                <legend>Resultado:</legend>
+                <p>
+                    <label for="">Índice:</label>
+                    <label for="" id="labelResultadoIMC"></label>
+                </p>
+                <p>
+                    <label for="">Resultado:</label>
+                    <label for="" id="labelResultadoIndice"></label>
+                </p>
+                <p>
+                    <label for="">Limites:</label>
+                    <label for="" id="labelResultadoLimite"></label>
+                </p>
+            </fieldset>
+        </section>
     </header>
 </body>
+<script>
+    function calcular() {
+        let peso = document.getElementById('peso').value
+        let altura = document.getElementById('altura').value
+        let imc = (peso / (altura * altura)).toFixed(2)
+        let textoResultado
+        let limite
+
+        if (imc < 17) {
+            textoResultado = 'Muito abaixo do peso ideal'
+            limite = 'Abaixo de 17'
+        } else if (imc >= 17 && imc <= 18.49) {
+            textoResultado = 'Abaixo do peso'
+            limite = 'Entre 17 e 18.49'
+        } else if (imc >= 18.5 && imc <= 24.99) {
+            textoResultado = 'Peso normal'
+            limite = 'Entre 18.5 e 24.99'
+        } else if (imc >= 25 && imc <= 29.99) {
+            textoResultado = 'Acima do peso'
+            limite = 'Entre 25 e 29.99'
+        } else if (imc >= 30 && imc <= 34.99) {
+            textoResultado = 'Obesidade grau 1'
+            limite = 'Entre 30 e 34.99'
+        } else if (imc >= 35 && imc <= 39.99) {
+            textoResultado = 'Obesidade grau 2'
+            limite = 'Entre 35 e 39.99'
+        } else {
+            textoResultado = 'Obesidade grau 3 (mórbida)'
+            limite = 'Acima de 40'
+        }
+
+        let resultadoIMC = document.getElementById('labelResultadoIMC')
+        resultadoIMC.innerHTML = (imc)
+
+        let resultadoIndice = document.getElementById('labelResultadoIndice')
+        resultadoIndice.innerHTML = (textoResultado)
+        
+        let resultadoLimite = document.getElementById('labelResultadoLimite')
+        resultadoLimite.innerHTML = (limite)
+    }
+    function limpar() {
+        let resultadoIMC = document.getElementById('labelResultadoIMC')
+        let resultadoIndice = document.getElementById('labelResultadoIndice')
+        let resultadoLimite = document.getElementById('labelResultadoLimite')
+
+        resultadoIMC.innerHTML = ('')
+        resultadoIndice.innerHTML = ('')
+        resultadoLimite.innerHTML = ('')
+    }
+</script>
 
 </html>
