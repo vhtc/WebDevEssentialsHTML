@@ -47,5 +47,55 @@
         </section>
     </header>
 </body>
+<script>
+    function calcular() {
+        let peso = document.getElementById('peso').value
+        let altura = document.getElementById('altura').value
+        let imc = (peso / (altura * altura)).toFixed(2)
+        let textoResultado
+        let limite
+
+        if (imc < 17) {
+            textoResultado = 'Muito abaixo do peso ideal'
+            limite = 'Abaixo de 17'
+        } else if (imc >= 17 && imc <= 18.49) {
+            textoResultado = 'Abaixo do peso'
+            limite = 'Entre 17 e 18.49'
+        } else if (imc >= 18.5 && imc <= 24.99) {
+            textoResultado = 'Peso normal'
+            limite = 'Entre 18.5 e 24.99'
+        } else if (imc >= 25 && imc <= 29.99) {
+            textoResultado = 'Acima do peso'
+            limite = 'Entre 25 e 29.99'
+        } else if (imc >= 30 && imc <= 34.99) {
+            textoResultado = 'Obesidade grau 1'
+            limite = 'Entre 30 e 34.99'
+        } else if (imc >= 35 && imc <= 39.99) {
+            textoResultado = 'Obesidade grau 2'
+            limite = 'Entre 35 e 39.99'
+        } else {
+            textoResultado = 'Obesidade grau 3 (mórbida)'
+            limite = 'Acima de 40'
+        }
+
+        let resultadoIMC = document.getElementById('labelResultadoIMC')
+        resultadoIMC.innerHTML = (imc)
+
+        let resultadoIndice = document.getElementById('labelResultadoIndice')
+        resultadoIndice.innerHTML = (textoResultado)
+        
+        let resultadoLimite = document.getElementById('labelResultadoLimite')
+        resultadoLimite.innerHTML = (limite)
+    }
+    function limpar() {
+        let resultadoIMC = document.getElementById('labelResultadoIMC')
+        let resultadoIndice = document.getElementById('labelResultadoIndice')
+        let resultadoLimite = document.getElementById('labelResultadoLimite')
+
+        resultadoIMC.innerHTML = ('')
+        resultadoIndice.innerHTML = ('')
+        resultadoLimite.innerHTML = ('')
+    }
+</script>
 
 </html>
