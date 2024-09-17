@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sunnydale School</title>
+    <style>
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e90ff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #h2_1 {
+            color: #32cd32;
+        }
+
+        #h2_2 {
+            color: #ffa07a;
+        }
+
+        #h2_3 {
+            color: #20b2aa;
+        }
+
+        span {
+            font-weight: bold;
+            color: red;
+        }
+
+        #upcoming-events {
+            background-color: #ffffe0;
+        }
+
+        .arLivre {
+            background-color: #afeeee;
+            padding: 5px;
+            border: 1px;
+            border-style: solid;
+            border-color: #b0e0e6;
+        }
+
+.areaButtons{
+    background-color: #f8f3f3;
+    padding: 10px;
+}        
+    </style>
+</head>
+
+<body>
+    <h1>Sunnydale School</h1>
+    <p>Bem-vindo à Sunnydale School, dedicada a promover o amor pela aprendizagem em cada aluno.</p>
+
+    <h2 id="h2_1">Declaração de Missão Statement</h2>
+    <p>Nossa missão é prover a qualidade da educação para preparar todas as crianças para um futuro de sucesso.</p>
+
+    <section id="upcoming-events">
+        <h2 id="h2_2">Próximos Eventos</h2>
+        <ul>
+            <li data-event-type="indoor" title="Indoor">Feira de Ciências - <span>June 10</span></li>
+            <li data-event-type="outdoor" title="Outdoor" class="arLivre">Exibição de Arte - <span>June 15</span></li>
+            <li data-event-type="outdoor" title="Outdoor" class="arLivre">Dia do Esporte - <span>June 20</span></li>
+        </ul>
+    </section>
+
+    <section id="sectionContateNos">
+        <h2 id="h2_3">Contate-nos</h2>
+        <div class="areaButtons">
+            <p onclick="alert('Email Copiado - ||')" title="Clique para copiar Email:">Email: info@sunnydaleschool.com
+            </p>
+            <p onclick="alert('Numero copiado  - ||')" title="Clique para copiar Telefone">Telefone: 555-1234</p>
+        </div>
+    </section>
+</body>
+
+</html>
