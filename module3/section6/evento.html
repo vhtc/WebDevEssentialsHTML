@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Eventos</title>
+</head>
+
+<body>
+    <header>
+        <fieldset>
+            <section id="cadastroNome">
+                <form action="javascript:void(0)" method="post" onsubmit="calcular()">
+                    <p>
+                        <label for="name">Full Name:</label>
+                        <input type="text" name="name" id="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required>
+                    </p>
+                    <fieldset>
+                        <legend>Choose your preference meal:</legend>
+                        <p>
+                            <label for="meal1">Vegetarian</label>
+                            <input type="radio" name="meal" id="meal1" value="Vegetarian" required>
+                            <label for="meal2">Non-Vegetarian</label>
+                            <input type="radio" name="meal" id="meal2" value="Non-Vegetarian" required checked>
+                        </p>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Select the workshops you'd like to attend:</legend>
+                        <p>
+                            <label for="work1">Workshop 1</label>
+                            <input type="checkbox" name="work" id="work1" value="Workshop 1">
+                            <label for="work2">Workshop 2</label>
+                            <input type="checkbox" name="work" id="work2" value="Workshop 2">
+                            <label for="work3">Workshop 3</label>
+                            <input type="checkbox" name="work" id="work3" value="Workshop 3">
+                        </p>
+                    </fieldset>
+
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Clean">
+
+                </form>
+            </section>
+        </fieldset>
+    </header>
+    <footer>
+
+    </footer>
+</body>
+<script>
+    function calcular() {
+        let fullname = document.getElementById('name').value
+        let email = document.getElementById('email').value
+        const preference = document.getElementsByName('meal')
+        let workshop = document.getElementsByName('work')
+        let preferenceEscolhida
+        let workshopEscolhido = '| '
+
+        for (let escolhido of preference) {
+            if (escolhido.checked) {
+                preferenceEscolhida = escolhido.value
+            } else {
+
+            }
+        }
+
+        let cont = 0
+        for (const element of workshop) {
+            if (element.checked) {
+                workshopEscolhido += `${element.value} | `
+                cont = 1
+            } else {
+                if (cont == 0) {
+                    workshopEscolhido = 'Non-preference'
+                }
+            }
+        }
+
+        alert(`Fullname: ${fullname}\n
+        Email: ${email} \n
+        Preference: ${preferenceEscolhida}
+        Workshops: ${workshopEscolhido}`)
+    }
+</script>
+
+</html>
