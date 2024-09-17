@@ -1,0 +1,9 @@
+.imgBanda{
+    height: 150px;
+    width: 200px;
+}
+
+fieldset{
+    margin: auto;
+    max-width: fit-content;
+}
