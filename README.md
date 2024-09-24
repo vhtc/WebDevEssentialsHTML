@@ -2,4 +2,4 @@
 
 ## https://edube.org/
 
-### module6 MapArea IMG
+### module6 OK
